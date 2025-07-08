@@ -24,7 +24,7 @@ export class AuthService {
     }
     async login( { email, password } ) {
         try {
-            const userLogin = await this.login.create( ID.unique(), email, password )
+            return await this.login.create( ID.unique(), email, password )
         } catch ( error ) {
             throw error;
         }
