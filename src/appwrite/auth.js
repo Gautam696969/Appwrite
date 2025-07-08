@@ -10,22 +10,24 @@ export class AuthService {
             .setEndpoint( conf.appwriteProjectId );
         this.account = new Account( this.Client );
     }
-    async createAccount ({email, password, name}){
-        try{
-           const userAccount =  await  this.account.create(ID.unique(), email, password , name)   
-           if(userAccount){
+    async createAccount( { email, password, name } ) {
+        try {
+            const userAccount = await this.account.create( ID.unique(), email, password, name )
+            if ( userAccount ) {
 
-           }else{
-            return userAccount
-           } 
-        }catch(error){
+            } else {
+                return userAccount
+            }
+        } catch ( error ) {
             throw error;
-        }   
+        }
     }
-    async login = ({email, password}){
-        try{
-            const userLogin = await this.login.create()
-        }catch
+    async login( { email, password } ) {
+        try {
+            const userLogin = await this.login.create( ID.unique(), email, password )
+        } catch ( error ) {
+            throw error;
+        }
     }
 }
 
