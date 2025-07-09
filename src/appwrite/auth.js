@@ -1,7 +1,6 @@
 import conf from "../conf/conf";
 import { Client, Account, ID } from "appwrite";
 
-
 export class AuthService {
     Client = new Client();
     constructor() {
@@ -14,7 +13,7 @@ export class AuthService {
         try {
             const userAccount = await this.account.create( ID.unique(), email, password, name )
             if ( userAccount ) {
-
+                return this.login( { email, password } )
             } else {
                 return userAccount
             }
@@ -24,10 +23,27 @@ export class AuthService {
     }
     async login( { email, password } ) {
         try {
-            return await this.login.create( ID.unique(), email, password )
+            return await this.account.createEmailPasswordSession( email, password );
         } catch ( error ) {
             throw error;
         }
+    }
+    async getCurrentUser() {
+        try {
+            return await this.account.get();
+        } catch ( error ) {
+            console.log( "Appwrite Service :: getCurrentUser :: error", error );
+            return null;
+        }
+    }
+    async logout() {
+        try {
+            await this.account.deleteSessions()
+        } catch ( error ) {
+            console.log( "Appwrite Service :: getCurrentUser :: error", error );
+            return null;
+        }
+
     }
 }
 
