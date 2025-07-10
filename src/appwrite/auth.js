@@ -1,7 +1,7 @@
 import conf from "../conf/conf";
 import { Client, Account, ID } from "appwrite";
 
-export class AuthService {
+export class authService {
     Client = new Client();
     constructor() {
         this.Client
@@ -46,4 +46,4 @@ export class AuthService {
     }
 }
 
-export default AuthService;
+export default authService;
