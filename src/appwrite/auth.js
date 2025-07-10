@@ -43,7 +43,6 @@ export class AuthService {
             console.log( "Appwrite Service :: getCurrentUser :: error", error );
             return null;
         }
-
     }
 }
 
