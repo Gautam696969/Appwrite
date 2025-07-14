@@ -45,21 +45,35 @@ function Login() {
                 {error && <p className='text-red-500 
                 text-center'>{error}</p>}
                 <form onSubmit={handleSubmit( login )}
-                className='mt-8'>
-                    <div className='space-y-5'> 
-                        <input 
-                        label = 'Email'
-                        placeholder='Enter you email'
-                        type = 'email'
-                        {...register('email', {
-                            required:true,
-                            validate:{
-                                matchPater : (value) => /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.
-                                test(value)||
-                                'Email address must be a user valid address',
-                            }
-                        })}
+                    className='mt-8'>
+                    <div className='space-y-5'>
+                        <input
+                            label='Email'
+                            placeholder='Enter you email'
+                            type='email'
+                            {...register( 'email', {
+                                required: true,
+                                validate: {
+                                    matchPater: ( value ) => /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.
+                                        test( value ) ||
+                                        'Email address must be a user valid address',
+                                }
+                            } )}
                         />
+
+                        <input
+                            label='password'
+                            placeholder='Enter password'
+                            type='password'
+                            {...register( 'password'{
+                                required: true
+                            } )}
+
+                        />
+                        <button
+                            type='submit'
+                            className='w-full' >
+                            Sing in</button>
                     </div>
                 </form>
             </div>
