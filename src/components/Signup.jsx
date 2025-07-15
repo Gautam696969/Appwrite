@@ -42,7 +42,47 @@ function Signup() {
                         Sign In
                     </Link>
                 </p>
-                {error&& <p className='text-red-500 mt-8 text-center'>{error}</p>}
+                {error && <p className='text-red-500 mt-8 text-center'>{error}</p>}
+                <form onSubmit={handleSubmit( create )}>
+                    <div className='space-y-5'>
+                        <input
+                            label='Name'
+                            placeholder='Enter your full name'
+                            type="text"
+                            {...register( "name", {
+                                required: true,
+                            } )}
+                        />
+
+                        <input
+                            label='Email'
+                            placeholder='Enter you email'
+                            type='email'
+                            {...register( 'email', {
+                                required: true,
+                                validate: {
+                                    matchPater: ( value ) => /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.
+                                        test( value ) ||
+                                        'Email address must be a user valid address',
+                                }
+                            } )}
+                        />
+                        <Input
+                            label="Password"
+                            type='password'
+                            placeholder='Enter password'
+                            type='password'
+                            {...register( 'password', {
+                                required: true,
+                            } )}
+                        />
+                        <Button
+                            type='submit'
+                            className='w-full'
+                        >Create Account
+                        </Button>
+                    </div>
+                </form>
             </div>
         </div>
     )
