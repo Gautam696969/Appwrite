@@ -53,7 +53,6 @@ function Signup() {
                                 required: true,
                             } )}
                         />
-
                         <input
                             label='Email'
                             placeholder='Enter you email'
@@ -71,7 +70,6 @@ function Signup() {
                             label="Password"
                             type='password'
                             placeholder='Enter password'
-                            type='password'
                             {...register( 'password', {
                                 required: true,
                             } )}
