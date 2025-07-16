@@ -23,18 +23,27 @@ function Post_form( { post } ) {
 
       if ( file ) {
         appwriteService.deleteFile( post.featuredImage )
-      }
-      const dbPost = await appwriteService.updatePost( post.$id, {
-        ...data,
-        featuredImage: file ? file.$id : undefined,
 
-        if( dbPost ) {
-          navigate( `/post/${dbPost.$id}` )
-        }
-      } )
+        const dbPost = await appwriteService.updatePost( post.$id, {
+          ...data,
+          featuredImage: file ? file.$id : undefined,
+
+          if( dbPost ) {
+            navigate( `/post/${dbPost.$id}` )
+          }
+        } )
+      }
+
     }
   }
-
+  const slugTransport = useCallback( ( value ) => {
+    if ( value && typeof value === 'string' )
+      value
+        .trim()
+        .toLowerCase()
+        .replace( /[^a-z0-9\-]/g, '' )
+    return ''
+  }, [] )
   return (
     <div>
 
