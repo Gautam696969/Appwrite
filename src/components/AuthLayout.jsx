@@ -12,7 +12,7 @@ export default function Protected( { children, authentication
         if ( authentication && authStatus !== authentication ) {
             navigate( './login' );
         } else ( !authentication && authStatus !== authentication ){
-            navigate( './' )
+            navigate( './' )    
         }
         setLoader( false )
     }, [authStatus, navigate, authentication] )

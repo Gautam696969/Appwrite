@@ -1,11 +1,10 @@
 import React, { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import { Button, Input, Select, RTE } from '..Index/'
+import { Button, Input, Select, RTE } from '../Index/'
 import appwriteService from '../../appwrite/config'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { useForm } from 'react-hook-form'
-function Post_form( { post } ) {
+function PostForm( { post } ) {
   const { register, handleSubmit, watch, setValue, control, getValues } = useForm( {
     defaultValues: {
       title: post?.title || '',
@@ -103,4 +102,4 @@ function Post_form( { post } ) {
   );
 }
 
-export default Post_form
+export default PostForm

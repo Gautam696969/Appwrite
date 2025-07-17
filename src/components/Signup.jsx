@@ -3,7 +3,7 @@ import { useState } from 'react'
 import authService from '../appwrite/auth'
 import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../store/authSlice'
-import { Button, Input, Logo } from './Index'
+import { Input, Logo , Button } from '../components/Index'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 function Signup() {
@@ -14,7 +14,7 @@ function Signup() {
     const create = async( ( date ) => {
         setError( "" );
         try {
-            const userData = await.authService.createAccount( data )
+            const userData = authService.createAccount( data )
             if ( userData ) {
                 const userData = authService.getCurrentUser();
                 if ( userData ) dispatch( login( userData ) )

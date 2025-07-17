@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { login, authLogin } from '../store/authSlice'
+import authService from '../appwrite/auth'
 import { Button, Input, Logo } from './Index'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
@@ -65,11 +65,11 @@ function Login() {
                             label='password'
                             placeholder='Enter password'
                             type='password'
-                            {...register( 'password'{
+                            {...register( 'password',{
                                 required: true
                             } )}
-
                         />
+                        
                         <button
                             type='submit'
                             className='w-full' >
