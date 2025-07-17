@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import appwriteService from '../appwrite/config'
-import { container, Postform } from './components'
+import PostForm from '../components/PostForm/Postform';
 import { useParams, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+
 function EditPost() {
     const [post, setPosts] = useState( [] );
     const { slug } = useParams();
@@ -22,7 +22,7 @@ function EditPost() {
 
     return post ? (
         
-        <div className='py-8'>
+        <div className='py-8'>            
             <container >
                 <Postform post={post} />
             </container>

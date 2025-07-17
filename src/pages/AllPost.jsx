@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
 import appwriteService from '../appwrite/config'
-import { PostCard } from '../components/PostCard'
-import { Container } from './components/ Container'
+import { PostCard } from '../components';
+import { Container } from 'postcss';
 function AllPost() {
     const [posts, setPosts] = useState( [] );
     useEffect( () => { }, [] )

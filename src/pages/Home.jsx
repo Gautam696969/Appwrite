@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import appwriteService from 'appwrite/config';
+import appwriteService from '../appwrite/config';
 import Container from '../container/Container';
 import PostCard from '../components/PostCard';
 function Home() {
