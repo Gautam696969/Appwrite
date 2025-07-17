@@ -32,7 +32,6 @@ function PostForm( { post } ) {
           }
         } )
       }
-
     }
   }
   const slugTransform = useCallback( ( value ) => {

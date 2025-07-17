@@ -26,7 +26,7 @@ function Home() {
                 </Container>
             </div>
         )
-    }
+    }   
     return (
         <div className='w-full py-8'>
             <Container>

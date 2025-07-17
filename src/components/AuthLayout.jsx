@@ -11,8 +11,9 @@ export default function Protected( { children, authentication
     useEffect( () => {
         if ( authentication && authStatus !== authentication ) {
             navigate( './login' );
-        } else ( !authentication && authStatus !== authentication ){
-            navigate( './' )    
+        } else {
+            !authentication && authStatus !== authentication
+            navigate( './' )
         }
         setLoader( false )
     }, [authStatus, navigate, authentication] )

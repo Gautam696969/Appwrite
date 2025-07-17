@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import authService from './appwrite/auth';
 import { login, logout } from './store/authSlice';
-import { Header, Footer } from './components/Index';
+import { Header } from './components/Index/Header';
+import { Footer } from './components/Index/Footer';
 import { Outlet } from 'react-router-dom';
-
 
 
 function App() {
