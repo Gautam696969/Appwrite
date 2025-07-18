@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import appwriteService from '../appwrite/config'
-import PostForm from '../components/PostForm/Postform';
+import { PostForm } from '../components';
 import { useParams, useNavigate } from 'react-router-dom'
 
 function EditPost() {
@@ -24,7 +24,7 @@ function EditPost() {
         
         <div className='py-8'>            
             <container >
-                <Postform post={post} />
+                <PostForm post={post} />
             </container>
         </div>
   ) :null
